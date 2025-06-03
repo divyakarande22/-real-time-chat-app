@@ -45,19 +45,55 @@ A full-stack real-time chat application built with Spring Boot and React, featur
 - MySQL 8.0 or higher
 - Maven 3.6 or higher
 
-## Installation
+## Setup Instructions
 
-### Backend Setup
-1. Clone the repository
-2. Navigate to the backend directory
-3. Configure database in `application.properties`
-4. Run `mvn clean install`
-5. Start the application: `mvn spring-boot:run`
+### 1. Clone the Repository
+```bash
+git clone https://github.com/divyakarande22/-real-time-chat-app.git
+cd real-time-chat-app
+```
 
-### Frontend Setup
-1. Navigate to the frontend directory
-2. Install dependencies: `npm install`
-3. Start the development server: `npm start`
+### 2. Backend Setup
+1. Navigate to the backend directory:
+   ```bash
+   cd backend
+   ```
+
+2. Create a MySQL database:
+   ```sql
+   CREATE DATABASE chatapp;
+   ```
+
+3. Configure the application:
+   - Copy `src/main/resources/application.properties.template` to `src/main/resources/application.properties`
+   - Update the database credentials in `application.properties`
+   - Update the JWT secret key
+
+4. Build and run the backend:
+   ```bash
+   mvn clean install
+   mvn spring-boot:run
+   ```
+
+### 3. Frontend Setup
+1. Navigate to the frontend directory:
+   ```bash
+   cd frontend
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Configure environment:
+   - Copy `.env.template` to `.env`
+   - Update the API URL if needed
+
+4. Start the development server:
+   ```bash
+   npm start
+   ```
 
 ## API Documentation
 
@@ -108,6 +144,24 @@ A full-stack real-time chat application built with Spring Boot and React, featur
 - Password encryption
 - CORS configuration
 - Secure WebSocket connections
+
+## Troubleshooting
+
+### Common Issues
+1. Database Connection
+   - Ensure MySQL is running
+   - Verify database credentials
+   - Check if database exists
+
+2. Frontend Connection
+   - Verify backend is running on port 8080
+   - Check CORS configuration
+   - Ensure WebSocket connection is allowed
+
+3. File Upload
+   - Check upload directory permissions
+   - Verify file size limits
+   - Ensure proper MIME types
 
 ## Contributing
 1. Fork the repository
